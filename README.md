@@ -43,34 +43,16 @@ There are two videos to support:
 # Seed the development database
 (web-application-starter-venv); python seed_dev_database.py
 
-# Run the tests (with extra logging) - see below if you have any issues
+# Run the tests (with extra logging)
 (web-application-starter-venv); pytest -sv
 
 # Run the web server
 ; python app.py
 # Now visit http://localhost:5001/emoji in your browser
 ```
-<br>
-<details>
-  <summary>I get a <code>ModuleNotFoundError: No module named 'psycopg'</code></summary>
-  <br>
-If, after activating your <code>venv</code> and installing dependencies, you see this error when running <code>pytest</code>, please deactivate and reactivate your <code>venv</code>. This should solve the problem - if not, contact your coach.
-</details>
-<br>
 
 If you would like to remove the example code:
 
 ```shell
 ; ./remove_example_code.sh
 ```
-
-
-<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
-
----
-
-**How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fweb-applications-in-python-project-starter-plain&prefill_File=README.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fweb-applications-in-python-project-starter-plain&prefill_File=README.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fweb-applications-in-python-project-starter-plain&prefill_File=README.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fweb-applications-in-python-project-starter-plain&prefill_File=README.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fweb-applications-in-python-project-starter-plain&prefill_File=README.md&prefill_Sentiment=😀)  
-Click an emoji to tell us.
-
-<!-- END GENERATED SECTION DO NOT EDIT -->

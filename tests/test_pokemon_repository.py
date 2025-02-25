@@ -27,3 +27,13 @@ def test_create_new_pokemon(db_connection):
         Pokemon(3, 'Charmander', 'fire'),
         Pokemon(4, "Bulbasaur", "grass/poison")
     ]
+
+def test_find_one_pokemon(db_connection):
+    db_connection.seed("seeds/pokemon_store.sql")
+    repository = PokemonRepository(db_connection)
+
+    pokemon = repository.find(2)
+
+    assert pokemon.id == 2
+    assert pokemon.name == 'Raichu'
+    assert pokemon.type == 'electric'

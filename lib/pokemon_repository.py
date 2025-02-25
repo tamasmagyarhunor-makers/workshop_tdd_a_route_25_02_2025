@@ -20,3 +20,15 @@ class PokemonRepository():
                 pokemon.type
             ]
         )
+    
+    def find(self, pokemon_id):
+        rows = self._db_connection.execute(
+            "SELECT * FROM pokemons WHERE id = %s",
+            [
+                pokemon_id
+            ]
+        )
+
+        pokemon = Pokemon(rows[0]['id'], rows[0]['name'], rows[0]['type'])
+
+        return pokemon

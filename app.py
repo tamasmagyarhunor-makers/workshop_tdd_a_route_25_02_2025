@@ -16,6 +16,15 @@ app = Flask(__name__)
 def get_emoji():
     return ":)"
 
+@app.route('/', methods=['GET'])
+def index():
+    return "Welcome to our little web app"
+
+@app.route('/', methods=['POST'])
+def index_post():
+    name = request.form['name']
+    return f"This is the POST index for {name}"
+
 # This imports some more example routes for you to see how they work
 # You can delete these lines if you don't need them.
 from example_routes import apply_example_routes

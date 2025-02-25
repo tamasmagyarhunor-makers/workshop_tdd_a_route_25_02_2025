@@ -1,5 +1,8 @@
 import os
 from flask import Flask, request
+from lib.database_connection import get_flask_database_connection
+from lib.pokemon_repository import PokemonRepository
+from lib.pokemon import Pokemon
 
 # Create a new Flask app
 app = Flask(__name__)
@@ -24,6 +27,17 @@ def index():
 def index_post():
     name = request.form['name']
     return f"This is the POST index for {name}"
+
+@app.route('/pokemons', methods=['GET'])
+def get_pokemons():
+    connection = get_flask_database_connection(app)
+    repository = PokemonRepository(connection)
+
+    pokemons = repository.all()
+
+    return "\n".join([
+        str(pokemon) for pokemon in pokemons
+    ])
 
 # This imports some more example routes for you to see how they work
 # You can delete these lines if you don't need them.

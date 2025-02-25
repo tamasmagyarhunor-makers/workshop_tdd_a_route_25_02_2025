@@ -39,6 +39,16 @@ def get_pokemons():
         str(pokemon) for pokemon in pokemons
     ])
 
+@app.route('/pokemons', methods=['POST'])
+def create_pokemon():
+    connection = get_flask_database_connection(app)
+    repository = PokemonRepository(connection)
+
+    repository.create(
+        Pokemon(None, request.form['name'], request.form['type'])
+    )
+    return "Pokemon added successfully"
+
 # This imports some more example routes for you to see how they work
 # You can delete these lines if you don't need them.
 from example_routes import apply_example_routes

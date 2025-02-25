@@ -11,10 +11,11 @@ class PokemonRepository():
             item = Pokemon(row["id"], row["name"], row["type"])
             pokemons.append(item)
         return pokemons
+
     
     def create(self, pokemon):
         self._db_connection.execute(
-            "INSERT INTO pokemons (name, type) VALUES(%s, %s)", 
+            "INSERT INTO pokemons (name, type) VALUES(%s, %s) RETURNING *", 
             [
                 pokemon.name, 
                 pokemon.type
